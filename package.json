@@ -1,0 +1,23 @@
+{
+  "name": "rm-rf-async",
+  "version": "0.0.1",
+  "description": "rm-rf in nodejs use async function",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmcesummer/rm-rf-async.git"
+  },
+  "keywords": [
+    "rm-rf",
+    "delete"
+  ],
+  "author": "cmce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmcesummer/rm-rf-async/issues"
+  },
+  "homepage": "https://github.com/cmcesummer/rm-rf-async#readme"
+}
