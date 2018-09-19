@@ -1,6 +1,6 @@
 {
   "name": "rm-rf-async",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "description": "rm-rf in nodejs use async function",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/cmcesummer/rm-rf-async/issues"
   },
-  "homepage": "https://github.com/cmcesummer/rm-rf-async#readme"
+  "homepage": "https://github.com/cmcesummer/rm-rf-async#readme",
+  "dependencies": {
+    "glob": "^7.1.3"
+  }
 }

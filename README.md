@@ -1,7 +1,8 @@
 # rm-rf-async
 
 ## 依赖要求
-需要 node v8.0.0 及以上
+需要 node v8.0.0 及以上   
+v1.0.2 依赖 glob
 
 ## async
 await只能能影响直接包裹它的async函数。因此在callback函数中的await并不会挂起整个async函数的执行。  
