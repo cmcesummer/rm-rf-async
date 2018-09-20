@@ -9,7 +9,7 @@ const readdirPro = util.promisify(fs.readdir);
 const rmdirPro = util.promisify(fs.rmdir);
 const globPro = util.promisify(glob);
 
-const _rmrf = async function(p) {
+const _rmrf = async function(p, opt) {
     let stat;
     try {
         stat = await statPro(p);
@@ -18,15 +18,15 @@ const _rmrf = async function(p) {
         else console.log(e);
     }
     if (!stat.isDirectory()) {
-        console.log(`rm ${p}`);
+        if (opt.log) console.log(`rm ${p}`);
         await unlinkPro(p);
     } else {
         const files = await readdirPro(p);
         for (const file of files) {
             const path = `${p}/${file}`;
-            await _rmrf(path);
+            await _rmrf(path, opt);
         }
-        console.log(`rm ${p}`);
+        if (opt.log) console.log(`rm ${p}`);
         await rmdirPro(p);
     }
 };
@@ -48,7 +48,7 @@ module.exports = async function rmrf(path, opt = OPT, cb = _ => {}) {
     assert.equal(typeof cb, 'function', 'callback sholud be a function');
     return globPro(path).then(async files => {
         for(let file of files) {
-            await _rmrf(file);
+            await _rmrf(file, opt);
         }
         cb && cb();
     });
