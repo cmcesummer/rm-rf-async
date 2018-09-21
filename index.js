@@ -31,10 +31,6 @@ const _rmrf = async function(p, opt) {
     }
 };
 
-// (async function() {
-//     await rmrf("./test");
-//     console.log("over");
-// })();
 const OPT = {log: true}
 
 module.exports = async function rmrf(path, opt = OPT, cb = _ => {}) {
